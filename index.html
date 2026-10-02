@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Peça sua pizza online na Pizzaria do Negão.">
+  <title>Pizzaria do Negão | Peça sua pizza</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #2b1d0e;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.topo {
+  text-align: center;
+  padding: 32px 20px 16px;
+}
+
+h1 {
+  color: #ffb703;
+  font-size: 2.4rem;
+  margin: 0 0 8px;
+}
+
+.topo p {
+  margin: 0;
+  color: #e8d5b5;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.destaque {
+  text-align: center;
+  margin: 16px 0 24px;
+}
+
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+}
+
+fieldset {
+  border: 1px solid #5a4126;
+  border-radius: 12px;
+  background-color: #3a2a17;
+  margin: 0 0 20px;
+  padding: 16px 20px 20px;
+}
+
+legend {
+  color: #ffb703;
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.opcao:hover {
+  background-color: #4a361d;
+}
+
+.opcao:has(input:checked) {
+  border-color: #ffb703;
+  background-color: #4a361d;
+}
+
+.opcao small {
+  display: block;
+  color: #e8d5b5;
+}
+
+input[type="radio"] {
+  accent-color: #ffb703;
+  width: 18px;
+  height: 18px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+}
+
+.opcao {
+  margin: 0 0 8px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #5a4126;
+  border-radius: 6px;
+  background-color: #2b1d0e;
+  color: #fff;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #05cb3a;
+  color: #04210c;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #04b032;
+}
+
+:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 2px;
+}
+
+.rodape {
+  text-align: center;
+  padding: 20px;
+  color: #bfa982;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="topo">
+    <h1>Pizzaria do Negão</h1>
+    <p>Massa fresca, forno quente e entrega rápida.</p>
+  </header>
+
+  <main>
+    <section class="destaque">
+      <img
+        src="https://pizzapoint.com.br/wp-content/uploads/elementor/thumbs/pizza-with-ingredients3-qnvpbch7pqi0y8evtdlscsl0zjqunrzfzj9hlu2enk.png"
+        alt="Pizza com ingredientes frescos">
+    </section>
+
+    <form class="pedido" action="#" method="post">
+
+      <fieldset>
+        <legend>1. Escolha o sabor</legend>
+
+        <label class="opcao">
+          <input type="radio" name="sabor" value="frango-catupiry" required>
+          <span>
+            <strong>Frango com catupiry</strong>
+            <small>Frango desfiado e catupiry cremoso</small>
+          </span>
+        </label>
+
+        <label class="opcao">
+          <input type="radio" name="sabor" value="calabresa">
+          <span>
+            <strong>Calabresa acebolada</strong>
+            <small>Calabresa fatiada com cebola</small>
+          </span>
+        </label>
+
+        <label class="opcao">
+          <input type="radio" name="sabor" value="moda-da-casa">
+          <span>
+            <strong>Moda da casa</strong>
+            <small>A receita secreta do chef</small>
+          </span>
+        </label>
+
+        <label class="opcao">
+          <input type="radio" name="sabor" value="marguerita">
+          <span>
+            <strong>Marguerita</strong>
+            <small>Tomate, muçarela e manjericão</small>
+          </span>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Escolha o tamanho</legend>
+        <label for="tamanho">Tamanho da pizza</label>
+        <select id="tamanho" name="tamanho" required>
+          <option value="">Selecione...</option>
+          <option value="pequena">Pequena (4 fatias)</option>
+          <option value="media">Média (6 fatias)</option>
+          <option value="grande">Grande (8 fatias)</option>
+          <option value="familia">Família (12 fatias)</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Seus dados para entrega</legend>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco" placeholder="Rua, número e bairro" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(79) 99999-9999" required>
+      </fieldset>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; Atividade de sexta, GIO</p>
+  </footer>
+
+</body>
+</html>
